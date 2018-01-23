@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title+'socket'
+  p Welcome to #{title}
+
+block scripts
+  script(src="/javascripts/socket.io-client/dist/socket.io.js")
+  script var socket = io.connect("//localhost:3000");socket.on('news',function(data){console.log(data);alert(data);socket.emit('my other event',{my: 'data'});})
+  
